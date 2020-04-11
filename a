@@ -1,0 +1,31 @@
+/* Summer.cpp */
+#include <cstddef>
+class Summer
+{
+private:
+  size_t sz = 0;
+  int* array = nullptr;
+  int total = 0;
+public:
+  Summer() {}
+  Summer(const size_t _sz, int* arr) :sz(_sz), array(arr) {}
+  int sum()
+  {
+    total = 0;
+    for(int i=0; i<sz; i++)
+      {
+        total += *(array + i);
+      }
+    return total;
+  }
+}; // Summer
+extern "C" {   // demangle function
+ // a wrapper function to create Summer and call Summer.sum 
+int sum( const size_t sz, int* array)
+  {
+    int ret = 0;
+    Summer S{sz, array};
+    ret = S.sum();
+    return ret;
+  }
+} // extern "C"
