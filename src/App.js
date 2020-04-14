@@ -39,7 +39,7 @@ class App extends Component {
             placeholder="Search Monsters"
             handleChange = {e => this.setState({ searchField : e.target.value})}
           />
-          <CardList monsters={filteredMonsters} />>
+          <CardList monsters={filteredMonsters} />
 
 
 
